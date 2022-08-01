@@ -1,0 +1,4 @@
+[22-May-2022 09:17:59 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/nearsouq/public_html/new.nearsouq.com/app/Http/Controllers/Dashboard/MallController.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/nearsouq/public_html/new.nearsouq.com/app/Http/Controllers/Dashboard/MallController.php on line 24

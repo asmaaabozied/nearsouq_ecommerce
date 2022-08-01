@@ -1,0 +1,12 @@
+{
+    "UserManagement": true,
+    "Geography": true,
+    "Chatting": true,
+    "Stadiums": true,
+    "Games": true,
+    "Pages": true,
+    "ContactUsMassages": true,
+    "Notifications": true,
+    "News": true,
+    "Consultations": true
+}

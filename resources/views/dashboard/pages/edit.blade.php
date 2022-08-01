@@ -1,0 +1,152 @@
+@extends('layouts.dashboard.app')
+
+@section('content')
+
+    <div class="page-wrapper" style="min-height: 422px;" data-select2-id="16">
+        <div class="content container-fluid" data-select2-id="15">
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="page-title">@lang('site.pages')</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a
+                                    href="{{route('dashboard.welcome') }}">@lang('site.dashboard')</li>
+                            <li class="breadcrumb-item"><a
+                                    hhref="{{ route('dashboard.pages.index') }}"> @lang('site.pages') </a></li>
+                            <li class="breadcrumb-item active"><a> @lang('site.edit') </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /Page Header -->
+
+            <div class="row" data-select2-id="14">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">@lang('site.pages')</h4>
+                            @include('partials._errors')
+
+                            <form action="{{ route('dashboard.pages.update', $page->id) }}"
+                                  method="post" enctype="multipart/form-data">
+
+                                {{ csrf_field() }}
+                                {{ method_field('put') }}
+
+                                <div class="row">
+                                    <div class="col-md-6">
+
+
+                                        <label>@lang('site.ar.name')</label>
+                                        <input type="text" name="name_ar" class="form-control"
+                                               value="{{ $page->name_ar ?? '' }}">
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <label>@lang('site.en.name')</label>
+                                        <input type="text" name="name_en" class="form-control"
+                                               value="{{ $page->name_en ?? '' }}">
+                                    </div>
+
+
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="row">
+                                    <div class="col-md-6">
+
+
+                                        <label>@lang('site.copy')</label>
+                                        <input type="text" name="copy" class="form-control"
+                                               value="{{ $page->copy ?? '' }}">
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <label>@lang('site.slug')</label>
+                                        <input type="text" name="slug" class="form-control"
+                                               value="{{ $page->slug ?? '' }}">
+                                    </div>
+
+
+                                </div>
+
+
+
+
+
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-md-6">
+
+
+                                        <label>@lang('site.ar.description')</label>
+
+                                        <textarea id="w3review" name="description_ar" rows="4" cols="50">{{ $page->description_ar ?? '' }}
+                       </textarea>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <label>@lang('site.en.description')</label>
+                                        <textarea id="w3review" name="description_en" rows="4" cols="50">{{ $page->description_en ?? '' }}
+                                </textarea>
+                                    </div>
+
+
+                                </div>
+
+
+                                <br>
+                                <br>
+
+
+
+                                <div class="text-end mt-4">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-warning mr-1"
+                                                onclick="history.back();">
+                                            <i class="fa fa-backward"></i> @lang('site.back')
+                                        </button>
+                                        <button type="submit" class="btn btn-primary"><i
+                                                class="fa fa-plus"></i>
+                                            @lang('site.edit')</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+@endsection
+
+@section('scripts')
+
+ <script type="text/javascript" src="//js.nicedit.com/nicEdit-latest.js"></script>
+  <script type="text/javascript">
+
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  </script>
+@endsection
+
+
+
